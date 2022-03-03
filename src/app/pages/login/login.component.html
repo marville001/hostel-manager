@@ -1,0 +1,31 @@
+<header page="login"></header>
+
+<div class="flex min-h-[80vh] flex-col items-center justify-center">
+  <div class="content w-full sm:w-[500px] p-4">
+    <h2 class="my-4 text-lg font-medium">Log in to Houseme</h2>
+
+    <div class="shadow-xl p-4 form rounded-md">
+      <div class="form-group mb-4">
+        <label class="text-sm" for="email-username">Email or username</label>
+        <input
+          type="text"
+          class="px-2 py-2 text-sm w-full outline-none border 
+          rounded-md mt-2 border-slate-200 focus:border-slate-600"
+        />
+      </div>
+      <div class="form-group mb-4">
+        <label class="text-sm" for="email-username">Password</label>
+        <input
+          type="password"
+          class="px-2 py-2 text-sm w-full outline-none border
+           rounded-md mt-2 border-slate-200 focus:border-slate-600"
+        />
+      </div>
+      <button class="w-full py-1 bg-slate-900 text-white rounded-md">Login</button>
+    </div>
+
+    <div class="text-sm my-6">New to Houseme? 
+        <a class="text-indigo-800" routerLink="/signup">Sign up</a>
+    </div>
+  </div>
+</div>
