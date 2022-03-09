@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { throws } from 'assert';
 
 @Injectable({
   providedIn: 'root',
@@ -16,6 +17,12 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return !!localStorage.getItem('token');
+    // return !!localStorage.getItem('token');
+    return this.getToken() !== null;
+  }
+
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['login']);
   }
 }
