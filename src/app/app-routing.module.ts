@@ -6,9 +6,14 @@ import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent, },
-  { path: 'signup', component: SignupComponent, },
-  { path: '**', component: PageNotFoundComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./modules/admin/admin.module').then((m) => m.AdminModule),
+  },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
