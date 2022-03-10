@@ -12,7 +12,9 @@
       routerLink="/admin/home"
       [routerLinkActive]="'bg-slate-900  !text-white  hover:bg-slate-900'"
     >
-      <mat-icon aria-hidden="false" aria-label="Houses" class="text-2xl">home</mat-icon>
+      <mat-icon aria-hidden="false" aria-label="Houses" class="text-2xl"
+        >dashboard</mat-icon
+      >
       <span class="mt-2">Dashboard</span>
     </a>
     <a
@@ -34,6 +36,38 @@
         >people_outline</mat-icon
       >
       <span>Tenants</span>
+    </a>
+  </div>
+  <div class="absolute inset-x-0 bottom-4">
+    <a
+      class="px-5 py-3 cursor-pointer text-slate-900 flex items-center space-x-5 hover:bg-gray-300 rounded-r-xl text-md"
+      routerLink="/admin/settings"
+      [routerLinkActive]="'bg-slate-900  !text-white  hover:bg-slate-900'"
+    >
+      <mat-icon aria-hidden="false" aria-label="Houses" class="text-2xl"
+        >settings</mat-icon
+      >
+      <span class="mt-2">Settings</span>
+    </a>
+    <a
+      class="px-5 py-3 cursor-pointer text-slate-900 flex items-center space-x-5 hover:bg-gray-300 rounded-r-xl text-md"
+      routerLink="/admin/help"
+      [routerLinkActive]="'bg-slate-900  !text-white  hover:bg-slate-900'"
+    >
+      <mat-icon aria-hidden="false" aria-label="Houses" class="text-2xl"
+        >help</mat-icon
+      >
+      <span class="mt-2">Help</span>
+    </a>
+    <a
+      class="px-5 py-3 cursor-pointer text-slate-900 flex items-center space-x-5 hover:bg-gray-300 rounded-r-xl text-md"
+      routerLink="/login"
+      [routerLinkActive]="'bg-slate-900  !text-white  hover:bg-slate-900'"
+    >
+      <mat-icon aria-hidden="false" aria-label="Houses" class="text-2xl"
+        >logout</mat-icon
+      >
+      <span class="mt-2">logout</span>
     </a>
   </div>
 </div>
