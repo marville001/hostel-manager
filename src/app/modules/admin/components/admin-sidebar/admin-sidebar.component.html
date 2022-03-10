@@ -1,3 +1,39 @@
-<div class="min-w-[240px] pt-4 bg-lavender h-screen">
-    <h4>Sidebar</h4>
+<div
+  [ngClass]="
+    !appNavigationService.sideBarOpen
+      ? '-translate-x-[200%] min-w-0 w-0'
+      : 'translate-x-0 w-[300px]'
+  "
+  class="transition-all duration-100 ease-linear pt-4 overflow-hidden bg-lavender text-white fixed bottom-0 top-12"
+>
+  <div class="flex flex-col">
+    <a
+      class="px-5 py-3 cursor-pointer text-slate-900 flex items-center space-x-5 hover:bg-gray-300 rounded-r-xl text-md"
+      routerLink="/admin/home"
+      [routerLinkActive]="'bg-slate-900  !text-white  hover:bg-slate-900'"
+    >
+      <mat-icon aria-hidden="false" aria-label="Houses" class="text-2xl">home</mat-icon>
+      <span class="mt-2">Dashboard</span>
+    </a>
+    <a
+      class="px-5 py-3 cursor-pointer text-slate-900 flex items-center space-x-5 hover:bg-gray-300 rounded-r-xl text-md"
+      routerLink="/admin/houses"
+      [routerLinkActive]="'bg-slate-900 !text-white  hover:bg-slate-900'"
+    >
+      <mat-icon aria-hidden="false" aria-label="Houses" class="text-xl"
+        >maps_home_work</mat-icon
+      >
+      <span>Houses</span>
+    </a>
+    <a
+      class="px-5 py-3 cursor-pointer text-slate-900 flex items-center space-x-5 hover:bg-gray-300 rounded-r-xl text-md"
+      routerLink="/admin/tenants"
+      [routerLinkActive]="'bg-slate-900  !text-white hover:bg-slate-900'"
+    >
+      <mat-icon aria-hidden="false" aria-label="Houses" class="text-xl"
+        >people_outline</mat-icon
+      >
+      <span>Tenants</span>
+    </a>
+  </div>
 </div>

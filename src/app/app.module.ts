@@ -11,6 +11,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { AuthService } from './services/auth.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { AppNavigationService } from './services/app-navigation.service';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
       useClass: TokenInterceptorService,
       multi: true,
     },
+    AppNavigationService,
   ],
   bootstrap: [AppComponent],
 })
