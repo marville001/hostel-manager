@@ -7,6 +7,7 @@ import { AdminFooterComponent } from './components/admin-footer/admin-footer.com
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './admin.component';
 import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.component';
+import { MaterialModule } from 'src/app/shared/modules/material/material.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    MaterialModule
   ]
 })
 export class AdminModule { }
