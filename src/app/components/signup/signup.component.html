@@ -15,39 +15,165 @@
   <div class="content w-full sm:w-[500px] p-4">
     <h2 class="my-4 text-xl mx-4 font-medium">Create your account</h2>
 
-    <div class="round-shadow p-4 form rounded-md">
+    <form
+      [formGroup]="user"
+      (ngSubmit)="onSubmit()"
+      class="round-shadow p-4 form rounded-md"
+    >
+      <div class="form-group mb-2">
+        <label class="text-sm" for="email-username">Name</label>
+        <input
+          type="text"
+          formControlName="name"
+          placeholder="Firstname Lastname"
+          class="px-2 py-2 text-sm w-full outline-none border rounded-md mt-2 border-slate-300 focus:border-slate-600"
+        />
+        <span
+          class="text-red-400 text-sx mt-2"
+          *ngIf="
+            (userFormControl?.name.touched || submitted) &&
+            userFormControl?.name.errors?.required
+          "
+        >
+          Name is required
+        </span>
+      </div>
       <div class="form-group mb-2">
         <label class="text-sm" for="email-username">Email</label>
         <input
-          type="text"
+          type="email"
+          formControlName="email"
+          placeholder="example@domain.xyz"
           class="px-2 py-2 text-sm w-full outline-none border rounded-md mt-2 border-slate-300 focus:border-slate-600"
         />
-      </div>
-      <div class="form-group mb-2">
-        <label class="text-sm" for="email-username">Username</label>
-        <input
-          type="text"
-          class="px-2 py-2 text-sm w-full outline-none border rounded-md mt-2 border-slate-300 focus:border-slate-600"
-        />
+        <span
+          class="text-red-400 text-sx mt-2"
+          *ngIf="
+            (userFormControl?.email.touched || submitted) &&
+            userFormControl?.email.errors?.required
+          "
+        >
+          Email is required
+        </span>
+        <span
+          class="text-red-400 text-sx mt-2"
+          *ngIf="
+            (userFormControl?.email.touched || submitted) &&
+            userFormControl?.email.errors?.email
+          "
+        >
+          Invalid email
+        </span>
       </div>
       <div class="form-group mb-2">
         <label class="text-sm" for="email-username">Password</label>
         <input
           type="password"
+          formControlName="password"
+          placeholder="**************"
           class="px-2 py-2 text-sm w-full outline-none border rounded-md mt-2 border-slate-300 focus:border-slate-600"
         />
+        <span
+          class="text-red-400 text-sx mt-2"
+          *ngIf="
+            (userFormControl?.password.touched || submitted) &&
+            userFormControl?.password.errors?.required
+          "
+        >
+          Password is required
+        </span>
+        <div
+          class="text-red-400 text-sx mt-2"
+          *ngIf="
+            (userFormControl?.password.touched || submitted) &&
+            userFormControl?.password.errors?.invalidPassword
+          "
+        >
+          <p>Password should contain at least</p>
+          <div class="ml-3">
+            <p class="my-0">- 8 characters</p>
+            <p class="my-0">- One symbol</p>
+            <p class="my-0">- One uppercase leterr</p>
+            <p class="my-0">- One lowecase leterr</p>
+            <p class="my-0">- One integer</p>
+
+          </div>
+        </div>
       </div>
       <div class="form-group mb-2">
         <label class="text-sm" for="email-username">Confirm password</label>
         <input
           type="password"
+          formControlName="cPassword"
+          placeholder="**************"
           class="px-2 py-2 text-sm w-full outline-none border rounded-md mt-2 border-slate-200 focus:border-slate-600"
         />
+        <span
+          class="text-red-400 text-sx mt-2"
+          *ngIf="
+            (userFormControl?.cPassword.touched || submitted) &&
+            userFormControl?.cPassword.errors?.required
+          "
+        >
+          Confirm Password is required
+        </span>
+        <span
+          class="text-red-400 text-sx mt-2"
+          *ngIf="
+            (userFormControl?.cPassword.touched || submitted) &&
+            userFormControl?.cPassword.errors?.passwordMismatch
+          "
+        >
+          Passwords do not match
+        </span>
       </div>
-      <button class="w-full py-2 text-md mt-2 tracking-wider bg-slate-900 text-white rounded-md">
+      <p>Gender</p>
+      <div class="form-group mb-2 flex space-x-5">
+        <label
+          for="male-gender"
+          class="text-sm flex items-center"
+          for="email-username"
+        >
+          <input
+            type="radio"
+            formControlName="gender"
+            value="male"
+            id="male-gender"
+            class="px-2 py-2 text-sm outline-none border rounded-md mt-2 border-slate-300 focus:border-slate-600"
+          />
+          <span class="ml-2 mt-2">Male</span>
+        </label>
+
+        <label
+          for="female-gender"
+          class="text-sm flex items-center"
+          for="email-username"
+        >
+          <input
+            type="radio"
+            formControlName="gender"
+            value="female"
+            id="female-gender"
+            class="px-2 py-2 text-sm outline-none border rounded-md mt-2 border-slate-300 focus:border-slate-600"
+          />
+          <span class="ml-2 mt-2">Female</span>
+        </label>
+      </div>
+      <span
+        class="text-red-400 text-sx mt-2"
+        *ngIf="
+          (userFormControl?.gender.touched || submitted) &&
+          userFormControl?.gender.errors?.required
+        "
+      >
+        Gender is required
+      </span>
+      <button
+        class="disabled:cursor-not-allowed disabled:opacity-70 w-full py-2 text-md mt-2 tracking-wider bg-slate-900 text-white rounded-md"
+      >
         Sign Up
       </button>
-    </div>
+    </form>
 
     <div class="text-sm my-6">
       Have an account?

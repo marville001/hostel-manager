@@ -6,10 +6,10 @@ module.exports = {
         lavender: "#e5e8e8",
         whitesmoke: "#edf0f0",
         tomato: "#f34060",
-        blueviolet:"#853dfc",
-        goldenrod:"#e5932a"
+        blueviolet: "#853dfc",
+        goldenrod: "#e5932a",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

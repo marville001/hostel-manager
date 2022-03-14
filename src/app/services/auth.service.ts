@@ -12,8 +12,9 @@ interface User{
   providedIn: 'root',
 })
 export class AuthService {
-  private _registerUrl = "http://localhost:5000/api/v1/signup";
-  private _loginUrl = "http://localhost:5000/api/v1/login";
+  public user: any;
+  private _registerUrl = "http://localhost:5000/api/v1/auth/signup";
+  private _loginUrl = "http://localhost:5000/api/v1/auth/login";
 
   constructor(private router: Router, private http: HttpClient) {}
 

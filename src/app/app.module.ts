@@ -12,6 +12,7 @@ import { AuthService } from './services/auth.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { AppNavigationService } from './services/app-navigation.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,13 @@ import { AppNavigationService } from './services/app-navigation.service';
     SignupComponent,
     ResetPasswordComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [
     AuthService,
     {
