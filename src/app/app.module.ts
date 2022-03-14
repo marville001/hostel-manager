@@ -13,6 +13,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { AppNavigationService } from './services/app-navigation.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ErrorInterceptorService } from './services/error-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptorService,
       multi: true,
     },
     AppNavigationService,

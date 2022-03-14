@@ -82,23 +82,16 @@
         >
           Password is required
         </span>
-        <div
+        <span
           class="text-red-400 text-sx mt-2"
           *ngIf="
             (userFormControl?.password.touched || submitted) &&
             userFormControl?.password.errors?.invalidPassword
           "
         >
-          <p>Password should contain at least</p>
-          <div class="ml-3">
-            <p class="my-0">- 8 characters</p>
-            <p class="my-0">- One symbol</p>
-            <p class="my-0">- One uppercase leterr</p>
-            <p class="my-0">- One lowecase leterr</p>
-            <p class="my-0">- One integer</p>
-
-          </div>
-        </div>
+        Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+        letter and 1 number
+        </span>
       </div>
       <div class="form-group mb-2">
         <label class="text-sm" for="email-username">Confirm password</label>
