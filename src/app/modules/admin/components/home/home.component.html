@@ -1,22 +1,130 @@
-<h2 class="!font-bold !text-2xl">Overview</h2>
+<div class=" overflow-hidde">
+  <h2 class="!font-bold !text-2xl">Overview</h2>
 
-<div class="flex space-x-5">
-  <div class="flex-1 p-4 bg-red-50 rounded-md h-40 relative gradient-bluish">
-    <div class="text-3xl uppercase tracking-widest text-white">Houses</div>
-    <div class="absolute right-6 bottom-4 text-4xl text-white font-bold">
-      34
+  <div class="flex space-x-5">
+    <a
+      routerLink="/admin/houses"
+      class="flex-1 p-4 bg-red-50 rounded-md h-40 relative gradient-bluish"
+    >
+      <div class="text-xl uppercase tracking-widest text-white">Houses</div>
+      <div class="absolute right-6 bottom-4 text-4xl text-white font-bold">
+        34
+      </div>
+    </a>
+    <a class="flex-1 p-4 bg-red-50 rounded-md h-40 gradient-tomato relative">
+      <div class="text-xl uppercase tracking-widest text-white">
+        Pending Bookings
+      </div>
+      <div class="absolute right-6 bottom-4 text-4xl text-white font-bold">
+        167
+      </div>
+    </a>
+    <a
+      routerLink="/admin/tenants"
+      class="flex-1 p-4 bg-red-50 rounded-md h-40 gradient-peru relative"
+    >
+      <div class="text-xl uppercase tracking-widest text-white">Tenants</div>
+      <div class="absolute right-6 bottom-4 text-4xl text-white font-bold">
+        2456
+      </div>
+    </a>
+  </div>
+
+  <div class="flex my-6 space-x-5">
+    <!-- Table Start -->
+    <div *ngFor="let t of ['Managers', 'Tenants']" class="flex-1 flex flex-col">
+      <div class="text-xl my-4">{{ t }}</div>
+      <div class="flex my-2 space-x-4">
+          <button class="text-tomato rounded-md text-md ring-2 ring-tomato hover:bg-tomato hover:text-white px-6 py-2">Delete</button>
+          <button class="text-blueviolet rounded-md text-md ring-2 ring-blueviolet hover:bg-blueviolet hover:text-white px-6 py-2">Edit</button>
+      </div>
+      <div class="overflow-x-auto shadow-md sm:rounded-lg">
+        <div class="inline-block min-w-full align-middle">
+          <div class="overflow-hidden">
+            <table
+              class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-700"
+            >
+              <thead class="bg-slate-50">
+                <tr>
+                  <th scope="col" class="p-4">
+                    <div class="flex items-center">
+                      <input
+                        id="checkbox-all"
+                        type="checkbox"
+                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      />
+                      <label for="checkbox-all" class="sr-only">checkbox</label>
+                    </div>
+                  </th>
+                  <th
+                    scope="col"
+                    class="py-3 px-6 text-xs font-medium tracking-wider text-left text-slate-900"
+                  >
+                    Name
+                  </th>
+                  <th
+                    scope="col"
+                    class="py-3 px-6 text-xs font-medium tracking-wider text-left text-slate-900"
+                  >
+                    Phone Number
+                  </th>
+                  <th
+                    scope="col"
+                    class="py-3 px-6 text-xs font-medium tracking-wider text-left text-slate-900"
+                  >
+                    Email
+                  </th>
+                  
+                  <th scope="col" class="p-4">
+                    <span class="sr-only">Edit</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr class="hover:bg-gray-100 cursor-pointer">
+                  <td class="p-4 w-2">
+                    <div class="flex items-center">
+                      <input
+                        id="checkbox-table-2"
+                        type="checkbox"
+                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      />
+                      <label for="checkbox-table-2" class="sr-only"
+                        >checkbox</label
+                      >
+                    </div>
+                  </td>
+                  <td
+                    class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap"
+                  >
+                    Allan Karanja
+                  </td>
+                  <td
+                    class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap"
+                  >
+                    +25470087566
+                  </td>
+                  <td
+                    class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap"
+                  >
+                    allan.karanja256@gmail.com
+                  </td>
+                  <td
+                    class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap"
+                  >
+                    <a
+                      href="#"
+                      class="text-blue-600 dark:text-blue-500 hover:underline"
+                      >Edit</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="flex-1 p-4 bg-red-50 rounded-md h-40 gradient-tomato relative">
-    <div class="text-3xl uppercase tracking-widest text-white">Managers</div>
-    <div class="absolute right-6 bottom-4 text-4xl text-white font-bold">
-      167
-    </div>
-  </div>
-  <div class="flex-1 p-4 bg-red-50 rounded-md h-40 gradient-peru relative">
-    <div class="text-3xl uppercase tracking-widest text-white">Tenants</div>
-    <div class="absolute right-6 bottom-4 text-4xl text-white font-bold">
-      2456
-    </div>
-  </div>
+  <!-- Table End -->
 </div>
