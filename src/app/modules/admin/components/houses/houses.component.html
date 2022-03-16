@@ -1,0 +1,35 @@
+<div class="flex flex-wrap">
+  <div class="w-full">
+    <tabs-header></tabs-header>
+    <div class="my-8 relative flex flex-col min-w-0 break-words w-full mb-6">
+      <div class="px-4 py-5 flex-auto">
+        <div class="tab-content tab-space">
+          <div
+            [ngClass]="{
+              hidden: tavNavService.openTab !== 'houses',
+              block: tavNavService.openTab === 'houses'
+            }"
+          >
+            <p>houses</p>
+          </div>
+          <div
+            [ngClass]="{
+              hidden: tavNavService.openTab !== 'rooms',
+              block: tavNavService.openTab === 'rooms'
+            }"
+          >
+            <p>rooms</p>
+          </div>
+          <div
+            [ngClass]="{
+              hidden: tavNavService.openTab !== 'any',
+              block: tavNavService.openTab === 'any'
+            }"
+          >
+            <p>any</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
