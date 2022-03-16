@@ -7,6 +7,7 @@ import { AllHousesComponent } from './components/houses/all-houses/all-houses.co
 import { HousesComponent } from './components/houses/houses.component';
 import { RoomsComponent } from './components/houses/rooms/rooms.component';
 import { SingleHouseComponent } from './components/houses/single-house/single-house.component';
+import { VacantHousesComponent } from './components/houses/vacant-houses/vacant-houses.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
         children: [
           { path: '', redirectTo: '/admin/houses/all', pathMatch: 'full' },
           { path: 'all', component: AllHousesComponent },
+          { path: 'vacant', component: VacantHousesComponent },
           { path: 'rooms', component: RoomsComponent },
           { path: 'new', component: AddHouseComponent },
           { path: ':id', component: SingleHouseComponent },

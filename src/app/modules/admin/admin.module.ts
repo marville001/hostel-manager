@@ -13,6 +13,7 @@ import { AllHousesComponent } from './components/houses/all-houses/all-houses.co
 import { AddHouseComponent } from './components/houses/add-house/add-house.component';
 import { RoomsComponent } from './components/houses/rooms/rooms.component';
 import { SingleHouseComponent } from './components/houses/single-house/single-house.component';
+import { VacantHousesComponent } from './components/houses/vacant-houses/vacant-houses.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SingleHouseComponent } from './components/houses/single-house/single-ho
     AddHouseComponent,
     RoomsComponent,
     SingleHouseComponent,
+    VacantHousesComponent,
   ],
   imports: [
     CommonModule,
