@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TabsNavigationService } from './services/tabs-navigation.service';
 
 @Component({
   selector: 'houses',
@@ -7,7 +6,7 @@ import { TabsNavigationService } from './services/tabs-navigation.service';
 })
 export class HousesComponent implements OnInit {
  
-  constructor(public tavNavService: TabsNavigationService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
