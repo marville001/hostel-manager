@@ -59,15 +59,15 @@
       >
       <span class="mt-2">Help</span>
     </a>
-    <a
+    <div
       class="px-5 py-3 cursor-pointer text-slate-900 flex items-center space-x-5 hover:bg-gray-300 rounded-r-xl text-md"
-      routerLink="/login"
+      (click)="logoutUser()"
       [routerLinkActive]="'bg-slate-900  !text-white  hover:bg-slate-900'"
     >
       <mat-icon aria-hidden="false" aria-label="Houses" class="text-2xl"
         >logout</mat-icon
       >
       <span class="mt-2">logout</span>
-    </a>
+    </div>
   </div>
 </div>
