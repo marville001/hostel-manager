@@ -16,10 +16,12 @@ import { CustomvalidationService } from 'src/app/services/customvalidation.servi
 })
 export class SignupComponent implements OnInit {
   user: FormGroup = new FormGroup({});
+  error: string = '';
+
   constructor(
     private fb: FormBuilder,
     private customValidator: CustomvalidationService,
-    private authService: AuthService,
+    public authService: AuthService,
     private router: Router
   ) {}
   // )
@@ -61,11 +63,21 @@ export class SignupComponent implements OnInit {
         password: this.userFormControl.password.value,
         gender: this.userFormControl.gender.value,
       };
-      this.authService.registerUser(obj).subscribe((result) => {
-        localStorage.setItem('token', result.token);
-        this.authService.user = result.user;
-        this.router.navigate(['/admin']);
-      });
+      this.error = '';
+      this.authService.isLoggingInUser = true;
+
+      this.authService.registerUser(obj).subscribe(
+        (result) => {
+          localStorage.setItem('token', result.token);
+          this.authService.user = result.user;
+          this.authService.isLoggingInUser = false;
+          this.router.navigate(['/admin']);
+        },
+        ({ error }) => {
+          this.authService.isLoggingInUser = false;
+          this.error = error.message;
+        }
+      );
     }
   }
 }

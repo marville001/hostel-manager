@@ -88,9 +88,14 @@
       </div>
       <button
         type="submit"
-        class="w-full py-2 text-md tracking-wider bg-slate-900 text-white rounded-md"
+        [disabled]="authService.isLoggingInUser"
+        class="disabled:cursor-not-allowed disabled:opacity-70 flex items-center justify-center space-x-6 w-full py-2 text-md tracking-wider bg-slate-900 text-white rounded-md"
       >
-        Log In
+        <mat-icon *ngIf="authService.isLoggingInUser"  aria-hidden="false" aria-label="Houses" class="origin-center text-2xl animate-spin"
+          >refresh</mat-icon
+        >
+        <span *ngIf="!authService.isLoggingInUser"> Log In </span>
+        <span *ngIf="authService.isLoggingInUser"> Loading... </span>
       </button>
     </form>
 

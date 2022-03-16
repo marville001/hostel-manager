@@ -13,6 +13,9 @@ interface User {
 })
 export class AuthService {
   public user: any;
+  public isLoggingInUser: boolean = false;
+  public isRegisteringUser: boolean = false;
+
   private _registerUrl = 'http://localhost:5000/api/v1/auth/signup';
   private _loginUrl = 'http://localhost:5000/api/v1/auth/login';
 

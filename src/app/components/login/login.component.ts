@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { CustomvalidationService } from 'src/app/services/customvalidation.service';
 
 @Component({
   selector: 'app-login',
@@ -12,25 +11,18 @@ import { CustomvalidationService } from 'src/app/services/customvalidation.servi
 export class LoginComponent implements OnInit {
   user: FormGroup = new FormGroup({});
 
-  error: string = "";
-  
+  error: string = '';
+
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService,
-    private customValidator: CustomvalidationService,
+    public authService: AuthService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
     this.user = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: [
-        '',
-        Validators.compose([
-          Validators.required,
-          this.customValidator.patternValidator(),
-        ]),
-      ],
+      password: ['', Validators.required],
     });
   }
 
@@ -47,13 +39,17 @@ export class LoginComponent implements OnInit {
         email: this.userFormControl.email.value,
         password: this.userFormControl.password.value,
       };
+      this.error = "";
+      this.authService.isLoggingInUser = true;
       this.authService.loginUser(obj).subscribe(
         (result) => {
           localStorage.setItem('token', result.token);
           this.authService.user = result.user;
+          this.authService.isLoggingInUser = false;
           this.router.navigate(['/admin']);
         },
-        ({error}) => {
+        ({ error }) => {
+          this.authService.isLoggingInUser = false;
           this.error = error.message;
         }
       );

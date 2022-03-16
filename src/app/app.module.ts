@@ -14,6 +14,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { AppNavigationService } from './services/app-navigation.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ErrorInterceptorService } from './services/error-interceptor.service';
+import { MaterialModule } from './shared/modules/material/material.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ErrorInterceptorService } from './services/error-interceptor.service';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MaterialModule
   ],
   providers: [
     AuthService,
