@@ -12,6 +12,7 @@ import { HousesComponent } from './components/houses/houses.component';
 import { AllHousesComponent } from './components/houses/all-houses/all-houses.component';
 import { AddHouseComponent } from './components/houses/add-house/add-house.component';
 import { RoomsComponent } from './components/houses/rooms/rooms.component';
+import { SingleHouseComponent } from './components/houses/single-house/single-house.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { RoomsComponent } from './components/houses/rooms/rooms.component';
     AllHousesComponent,
     AddHouseComponent,
     RoomsComponent,
+    SingleHouseComponent,
   ],
   imports: [
     CommonModule,

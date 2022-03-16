@@ -6,6 +6,7 @@ import { AddHouseComponent } from './components/houses/add-house/add-house.compo
 import { AllHousesComponent } from './components/houses/all-houses/all-houses.component';
 import { HousesComponent } from './components/houses/houses.component';
 import { RoomsComponent } from './components/houses/rooms/rooms.component';
+import { SingleHouseComponent } from './components/houses/single-house/single-house.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
           { path: 'all', component: AllHousesComponent },
           { path: 'rooms', component: RoomsComponent },
           { path: 'new', component: AddHouseComponent },
+          { path: ':id', component: SingleHouseComponent },
         ],
       },
       { path: 'tenants', component: HomeComponent },

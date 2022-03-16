@@ -1,0 +1,11 @@
+.new-house-btn{
+    @apply bg-slate-900 py-2 px-16 text-white rounded-md;
+}
+
+.houses-list{
+    @apply w-full gap-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-6;
+}
+
+.house-item{
+    @apply bg-white rounded-md overflow-hidden max-h-56;
+}
