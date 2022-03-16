@@ -2,6 +2,21 @@
   <a routerLink="/admin/houses/new" class="new-house-btn">Add House</a>
 </div>
 
+<div class="flex mt-6">
+  <a
+    class="text-sm tracking-wider text-slate-900 capitalize py-2 rounded-lg cursor-pointer px-8"
+    routerLink="/admin/houses/all"
+    [routerLinkActive]="'!text-white !bg-slate-900'"
+    >All
+  </a>
+  <a
+    class="text-sm tracking-wider text-slate-900  capitalize py-2 rounded-lg cursor-pointer px-8"
+    routerLink="/admin/houses/vacant"
+    [routerLinkActive]="'!text-white !bg-slate-900'"
+    >Vacant
+  </a>
+</div>
+
 <div class="houses-list">
   <div *ngFor="let house of houses" class="house-item">
     <div class="flex">
