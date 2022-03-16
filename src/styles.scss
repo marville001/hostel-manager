@@ -11,6 +11,12 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+  
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 * {
@@ -35,12 +41,3 @@ body {
   background: linear-gradient(303.9deg, #e8663d, rgba(228, 144, 18, 0.9) 98.1%);
 }
 
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  overflow: hidden;
-}
