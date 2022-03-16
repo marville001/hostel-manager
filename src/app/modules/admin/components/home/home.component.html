@@ -1,36 +1,36 @@
 <div class=" overflow-hidde">
   <h2 class="!font-bold !text-2xl">Overview</h2>
 
-  <div class="flex space-x-5">
+  <div class="flex  flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5">
     <a
       routerLink="/admin/houses"
-      class="flex-1 p-4 bg-red-50 rounded-md h-40 relative gradient-bluish"
+      class="flex-1 p-6 md:p-4 bg-red-50 rounded-md h-40 relative gradient-bluish"
     >
-      <div class="text-xl uppercase tracking-widest text-white">Houses</div>
-      <div class="absolute right-6 bottom-4 text-4xl text-white font-bold">
+      <div class="text-md md:text-xl uppercase tracking-widest text-white">Houses</div>
+      <div class="absolute right-6 bottom-4 text-2xl md:text-4xl text-white font-bold">
         34
       </div>
     </a>
-    <a class="flex-1 p-4 bg-red-50 rounded-md h-40 gradient-tomato relative">
-      <div class="text-xl uppercase tracking-widest text-white">
+    <a class="flex-1 p-6 md:p-4 bg-red-50 rounded-md h-40 gradient-tomato relative">
+      <div class="text-md md:text-xl uppercase tracking-widest text-white">
         Pending Bookings
       </div>
-      <div class="absolute right-6 bottom-4 text-4xl text-white font-bold">
+      <div class="absolute right-6 bottom-4 text-2xl md:text-4xl text-white font-bold">
         167
       </div>
     </a>
     <a
       routerLink="/admin/tenants"
-      class="flex-1 p-4 bg-red-50 rounded-md h-40 gradient-peru relative"
+      class="flex-1 p-6 md:p-4 bg-red-50 rounded-md h-40 gradient-peru relative"
     >
-      <div class="text-xl uppercase tracking-widest text-white">Tenants</div>
-      <div class="absolute right-6 bottom-4 text-4xl text-white font-bold">
+      <div class="text-md md:text-xl uppercase tracking-widest text-white">Tenants</div>
+      <div class="absolute right-6 bottom-4 text-2xl md:text-4xl text-white font-bold">
         2456
       </div>
     </a>
   </div>
 
-  <div class="flex my-6 space-x-5">
+  <div class="flex my-6 flex-col gap-5 xl:flex-row">
     <!-- Table Start -->
     <div *ngFor="let t of ['Managers', 'Tenants']" class="flex-1 flex flex-col">
       <div class="text-xl my-4">{{ t }}</div>
