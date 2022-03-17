@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { environment as env } from '../../environments/environment';
+
 interface User {
   email: string;
   password: string;
@@ -16,8 +18,8 @@ export class AuthService {
   public isLoggingInUser: boolean = false;
   public isRegisteringUser: boolean = false;
 
-  private _registerUrl = 'http://localhost:5000/api/v1/auth/signup';
-  private _loginUrl = 'http://localhost:5000/api/v1/auth/login';
+  private _registerUrl = env.LOGIN_URL;
+  private _loginUrl = env.REGISTER_URL;
 
   constructor(private router: Router, private http: HttpClient) {}
 
