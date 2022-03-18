@@ -18,8 +18,8 @@ export class AuthService {
   public isLoggingInUser: boolean = false;
   public isRegisteringUser: boolean = false;
 
-  private _registerUrl = env.LOGIN_URL;
-  private _loginUrl = env.REGISTER_URL;
+  private _registerUrl = env.API_URL+'auth/signup';
+  private _loginUrl = env.API_URL + 'auth/login';
 
   constructor(private router: Router, private http: HttpClient) {}
 

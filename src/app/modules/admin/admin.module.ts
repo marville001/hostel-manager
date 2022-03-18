@@ -14,6 +14,7 @@ import { AddHouseComponent } from './components/houses/add-house/add-house.compo
 import { RoomsComponent } from './components/houses/rooms/rooms.component';
 import { SingleHouseComponent } from './components/houses/single-house/single-house.component';
 import { VacantHousesComponent } from './components/houses/vacant-houses/vacant-houses.component';
+import { AdminService } from './services/admin.service';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,9 @@ import { VacantHousesComponent } from './components/houses/vacant-houses/vacant-
     CommonModule,
     AdminRoutingModule,
     MaterialModule
+  ],
+  providers: [
+    AdminService
   ]
 })
 export class AdminModule { }

@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  LOGIN_URL: 'http://localhost:5000/api/v1/auth/signup',
-  REGISTER_URL: 'http://localhost:5000/api/v1/auth/signup',
+  API_URL: 'http://localhost:5000/api/v1/'
 };
 
 /*
