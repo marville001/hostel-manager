@@ -8,14 +8,16 @@ import { AdminDto } from '../models/admin.dto';
   providedIn: 'root'
 })
 export class AdminService {
-  admin: AdminDto = new AdminDto();
+  public admin:any;
   private _getLoggedInUserUrl = env.API_URL+'users/me';
 
   constructor(private router: Router, private http: HttpClient) { }
 
   getLoggedInUser() {
-    this.http.get<any>(this._getLoggedInUserUrl).subscribe(user => {
-      this.admin = user;      
+    this.http.get<any>(this._getLoggedInUserUrl).subscribe((user: AdminDto) => {
+      this.admin = user; 
+      console.log(this.admin);
+      
     }, error => {
       this.logout()
     })

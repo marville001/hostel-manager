@@ -8,7 +8,8 @@ import { AdminService } from './services/admin.service';
   styleUrls: [],
 })
 export class AdminComponent implements OnInit {
-  constructor(public appNavigationService: AppNavigationService, private adminService: AdminService) {}
+  constructor(public appNavigationService: AppNavigationService, public adminService: AdminService
+  ) { }
 
   ngOnInit(): void {
     if (window.innerWidth <= 1025) {

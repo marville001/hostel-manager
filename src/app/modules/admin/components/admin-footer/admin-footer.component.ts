@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../../services/admin.service';
 
 @Component({
   selector: 'admin-footer',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminFooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(public adminService: AdminService) { }
 
   ngOnInit(): void {
+    // console.log();
+    
   }
 
 }
