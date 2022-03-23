@@ -15,6 +15,11 @@ import { AppNavigationService } from './services/app-navigation.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ErrorInterceptorService } from './services/error-interceptor.service';
 import { MaterialModule } from './shared/modules/material/material.module';
+import { ErrorMessageComponent } from './shared/components/forms/validation/error-message/error-message.component';
+import { InputNumberComponent } from './shared/components/forms/inputs/input-number.component';
+import { InputTextareaComponent } from './shared/components/forms/inputs/input-textarea.component';
+import { InputEmailComponent } from './shared/components/forms/inputs/input-email.component';
+import { InputTextComponent } from './shared/components/forms/inputs/input-text.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,11 @@ import { MaterialModule } from './shared/modules/material/material.module';
     PageNotFoundComponent,
     SignupComponent,
     ResetPasswordComponent,
+    InputTextComponent,
+    ErrorMessageComponent,
+    InputNumberComponent,
+    InputTextareaComponent,
+    InputEmailComponent,
   ],
   imports: [
     BrowserModule,

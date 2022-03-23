@@ -1,0 +1,9 @@
+<div *ngIf="showErrorMessage">
+    <ng-container *ngIf="customMessage; else noCustomMessage">
+        {{customMessage}}
+    </ng-container>
+    <ng-template #noCustomMessage>
+        <ng-content *ngIf="useNgContent"></ng-content>
+        <span *ngIf="!useNgContent">Required</span>
+    </ng-template>
+</div>
