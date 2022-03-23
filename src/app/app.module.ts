@@ -20,6 +20,8 @@ import { InputNumberComponent } from './shared/components/forms/inputs/input-num
 import { InputTextareaComponent } from './shared/components/forms/inputs/input-textarea.component';
 import { InputEmailComponent } from './shared/components/forms/inputs/input-email.component';
 import { InputTextComponent } from './shared/components/forms/inputs/input-text.component';
+import { ErrorModalComponent } from './shared/components/modals/error-modal/error-modal.component';
+import { SuccessModalComponent } from './shared/components/modals/success-modal/success-modal.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { InputTextComponent } from './shared/components/forms/inputs/input-text.
     InputNumberComponent,
     InputTextareaComponent,
     InputEmailComponent,
+    ErrorModalComponent,
+    SuccessModalComponent,
   ],
   imports: [
     BrowserModule,
