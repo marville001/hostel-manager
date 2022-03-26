@@ -2,6 +2,27 @@
   <a routerLink="/admin/houses/new" class="new-house-btn">Add House</a>
 </div>
 
+<div class="flex justify-end my-6 gap-5">
+  <div class="bg-white flex items-center justify-center rounded-lg p-2 cursor-pointer">
+    <input type="text" class="text-sm py-0 !outline-none !border-0 !ring-0 w-full ">
+    <mat-icon
+      aria-hidden="false"
+      class="block"
+      aria-label="Notifications"
+      >search</mat-icon
+    >
+  </div>
+
+  <div class="bg-white flex items-center justify-center rounded-lg p-2 cursor-pointer">
+    <mat-icon
+      aria-hidden="false"
+      class="block"
+      aria-label="Notifications"
+      >sort_by_alpha</mat-icon
+    >
+  </div>
+</div>
+
 <div class="houses-list">
   <div *ngFor="let house of houses" class="house-item">
     <div class="flex">
