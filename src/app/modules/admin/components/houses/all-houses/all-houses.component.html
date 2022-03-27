@@ -3,46 +3,78 @@
 </div>
 
 <div class="flex justify-end my-6 gap-5">
-  <div class="bg-white flex items-center justify-center rounded-lg p-1 cursor-pointer">
-    <input type="text" class="text-sm py-0 !outline-none !border-0 !ring-0 w-full ">
-    <mat-icon
-      aria-hidden="false"
-      class="block"
-      aria-label="Search"
+  <div
+    (click)="houseService.isSearching = true"
+    class="bg-white flex items-center justify-center rounded-lg p-1 cursor-pointer"
+  >
+    <input
+      *ngIf="houseService.isSearching"
+      type="text"
+      class="text-sm py-0 !outline-none !border-0 !ring-0 w-full"
+    />
+    <mat-icon aria-hidden="false" class="block" aria-label="Search"
       >search</mat-icon
     >
   </div>
 
-  <div class="bg-white flex items-center justify-center rounded-lg p-1 cursor-pointer">
-    <mat-icon
-      aria-hidden="false"
-      class="block"
-      aria-label="Sort"
+  <div
+    (click)="
+      houseService.isSorting
+        ? (houseService.isSorting = false)
+        : (houseService.isSorting = true)
+    "
+    [ngClass]="houseService.isSorting ? 'bg-goldenrod text-white' : ''"
+    class="bg-white flex items-center justify-center rounded-lg p-1 cursor-pointer"
+  >
+    <mat-icon aria-hidden="false" class="block" aria-label="Sort"
       >sort_by_alpha</mat-icon
     >
   </div>
 </div>
 
-<div class="p-4 bg-lavender rounded-md flex items-center gap-6">
+<div
+  class="p-4 bg-lavender rounded-md flex items-center gap-6"
+  *ngIf="houseService.isSorting"
+>
   <mat-icon
-      aria-hidden="false"
-      class="block text-[30px] text-slate"
-      aria-label="Sort"
-      >import_export</mat-icon
-    >
+    aria-hidden="false"
+    class="block text-[30px] text-slate"
+    aria-label="Sort"
+    >import_export</mat-icon
+  >
 
-    <div class="text-lg">Sort By</div>
+  <div class="text-lg">Sort By</div>
 
-    <div class="bg-slate-700 py-1 px-6 text-slate-200 rounded-xl cursor-pointer">Date</div>
-    <div class="bg-slate-700 py-1 px-6 text-slate-200 rounded-xl cursor-pointer">Name</div>
-    <div class="bg-slate-700 py-1 px-6 text-slate-200 rounded-xl cursor-pointer">Price</div>
+  <div
+    [ngClass]="houseService.sortBy === 'date' ? 'bg-slate-700 text-slate-200' : 'text-slate-900'"
+    (click)="houseService.sortBy = 'date'"
+    class="py-1 px-6  rounded-xl cursor-pointer"
+  >
+    Date
+  </div>
+  <div
+    [ngClass]="houseService.sortBy === 'name' ? 'bg-slate-700 text-slate-200' : 'text-slate-900'"
+    (click)="houseService.sortBy = 'name'"
+    class="py-1 px-6  rounded-xl cursor-pointer"
+  >
+    Name
+  </div>
+  <div
+    [ngClass]="houseService.sortBy === 'price' ? 'bg-slate-700 text-slate-200' : 'text-slate-900'"
+    (click)="houseService.sortBy = 'price'"
+    class="py-1 px-6  rounded-xl cursor-pointer"
+  >
+    Price
+  </div>
 </div>
 
 <div class="houses-list">
   <div *ngFor="let house of houses" class="house-item">
     <div class="flex">
       <div class="flex-1 relative">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xl font-bold bg-white p-2 px-6">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xl font-bold bg-white p-2 px-6"
+        >
           <span *ngIf="!house.full" class="text-green-600">VACANT</span>
           <span *ngIf="house.full" class="text-red-600">FULL</span>
         </div>
@@ -53,11 +85,22 @@
         />
       </div>
       <div class="flex-1 p-4">
-          <div class="!m-0 !p-0 leading-3 !text-lg font-bold tracking-wider">{{house.name}}</div>
-          <div class="flex items-center my-3">
-              <div class="!m-0 !p-0 leading-3 text-xl flex items-center space-x-2"> <span class="text-3xl text-indigo-900 font-bold">{{house.rooms}}</span> <span>rooms</span></div>
+        <div class="!m-0 !p-0 leading-3 !text-lg font-bold tracking-wider">
+          {{ house.name }}
         </div>
-        <a [routerLink]="['/admin/houses/', house.id]" class="underline pb-2 text-lg text-slate-900">View House</a>
+        <div class="flex items-center my-3">
+          <div class="!m-0 !p-0 leading-3 text-xl flex items-center space-x-2">
+            <span class="text-3xl text-indigo-900 font-bold">{{
+              house.rooms
+            }}</span>
+            <span>rooms</span>
+          </div>
+        </div>
+        <a
+          [routerLink]="['/admin/houses/', house.id]"
+          class="underline pb-2 text-lg text-slate-900"
+          >View House</a
+        >
       </div>
     </div>
   </div>

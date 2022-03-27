@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HousesService {
+  public isSorting: boolean = false;
+  public isSearching: boolean = false;
+  public sortBy: string = "";
 
   constructor() { }
 }

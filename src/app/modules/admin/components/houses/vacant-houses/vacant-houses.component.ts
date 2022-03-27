@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HousesService } from '../../../services/houses.service';
 
 @Component({
   selector: 'vacant-houses',
@@ -11,7 +12,7 @@ export class VacantHousesComponent implements OnInit {
     {id:3, name:"Aberdare Hostels", image: "https://images.pexels.com/photos/1358853/pexels-photo-1358853.jpeg", rooms: 12, full:false}
   ]
   
-  constructor() { }
+  constructor(public houseService: HousesService) { }
 
   ngOnInit(): void {
   }
