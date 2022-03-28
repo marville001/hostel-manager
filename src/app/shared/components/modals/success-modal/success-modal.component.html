@@ -1,1 +1,16 @@
-<p>success-modal works!</p>
+<modal [vposition]="'top'" [hposition]="'right'" [showModal]="showSuccessModal">
+  <div class="bg-green-300 p-4 py-0 flex min-w-[300px] divide-x-2 divide-green-900 rounded-lg">
+    <div class="pr-6 py-2">
+		<mat-icon
+        aria-hidden="false"
+        class="text-green-500 cursor-pointer"
+        aria-label="Error"
+        >check_circle</mat-icon
+      >
+	</div>
+    <div class="pl-6">
+      <span class="text-green-900 py-2 block">Success!</span>
+      <div class="text-green-900 mb-3">{{ message }}</div>
+    </div>
+  </div>
+</modal>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'success-modal',
@@ -11,5 +11,10 @@ export class SuccessModalComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  @Input()
+  public showSuccessModal: boolean = false;
+
+  @Input()
+  public message: string = '';
 
 }
