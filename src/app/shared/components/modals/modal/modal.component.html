@@ -1,3 +1,10 @@
-<div *ngIf="showModal" class="fixed left-0 top-0 z-[45566] h-screen w-screen bg-transparent overflow-scroll flex items-center justify-center">
-	<ng-content></ng-content>
+<div
+  *ngIf="showModal"
+  class="fixed left-0 top-0 z-[45566] h-screen w-screen bg-transparent overflow-scroll flex p-16"
+  [ngClass]="vposition === 'top' ? 'items-start' : 'items-center'"
+  [ngClass]="hposition === 'right' ? 'justify-end' : 'justify-center'"
+>
+  <div class="h-max">
+    <ng-content></ng-content>
+  </div>
 </div>

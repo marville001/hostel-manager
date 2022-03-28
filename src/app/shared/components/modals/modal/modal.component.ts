@@ -15,4 +15,7 @@ export class ModalComponent implements OnInit {
 
   @Input()
   public vposition: string = "center";
+
+  @Input()
+  public hposition: string = "center";
 }
