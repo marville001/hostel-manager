@@ -1,3 +1,12 @@
-<div class="py-8">
+<div class="pt-4 pl-4 bg-slate-900">
+	<div class="flex text-white">
+		<a routerLinkActive="border-b-4 border-b-red-600" routerLink="/admin/houses/all" class="px-4 py-2">All Houses</a>
+		<a routerLinkActive="border-b-4 border-b-red-600" routerLink="/admin/houses/vacant" class="px-4 py-2">Vacant</a>
+		<a routerLinkActive="border-b-4 border-b-red-600" routerLink="/admin/houses/payments" class="px-4 py-2">Payments</a>
+		<a routerLinkActive="border-b-4 border-b-red-600" routerLink="/admin/houses/invoices" class="px-4 py-2">Invoices</a>
+		<a routerLinkActive="border-b-4 border-b-red-600" routerLink="/admin/houses/bills" class="px-4 py-2">Bills</a>
+	</div>
+</div>
+<div class="px-2 lg:px-8 pt-5">
   <router-outlet></router-outlet>
 </div>
