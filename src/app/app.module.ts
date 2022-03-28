@@ -22,6 +22,7 @@ import { InputEmailComponent } from './shared/components/forms/inputs/input-emai
 import { InputTextComponent } from './shared/components/forms/inputs/input-text.component';
 import { ErrorModalComponent } from './shared/components/modals/error-modal/error-modal.component';
 import { SuccessModalComponent } from './shared/components/modals/success-modal/success-modal.component';
+import { ModalComponent } from './shared/components/modals/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { SuccessModalComponent } from './shared/components/modals/success-modal/
     InputEmailComponent,
     ErrorModalComponent,
     SuccessModalComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
