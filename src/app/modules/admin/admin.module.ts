@@ -15,6 +15,7 @@ import { RoomsComponent } from './components/houses/rooms/rooms.component';
 import { SingleHouseComponent } from './components/houses/single-house/single-house.component';
 import { VacantHousesComponent } from './components/houses/vacant-houses/vacant-houses.component';
 import { AdminService } from './services/admin.service';
+import { ModalModule } from 'src/app/shared/modules/modal/modal.module';
 
 @NgModule({
   declarations: [
@@ -28,12 +29,13 @@ import { AdminService } from './services/admin.service';
     AddHouseComponent,
     RoomsComponent,
     SingleHouseComponent,
-    VacantHousesComponent,
+    VacantHousesComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ModalModule
   ],
   providers: [
     AdminService
