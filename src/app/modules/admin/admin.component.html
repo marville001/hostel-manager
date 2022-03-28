@@ -1,11 +1,13 @@
-<admin-header></admin-header>
 <div class="flex">
   <admin-sidebar></admin-sidebar>
   <div
     [ngClass]="appNavigationService.sideBarOpen ? 'lg:ml-[300px]' : 'ml-0'"
-    class="flex-1 p-2 lg:p-8 bg-whitesmoke transition-all duration-100 ease-linear min-h-screen mt-12 overflow-auto"
+    class="flex-1 bg-whitesmoke transition-all duration-100 ease-linear min-h-screen overflow-auto"
   >
-    <router-outlet></router-outlet>
+    <admin-header></admin-header>
+    <div class="p-2 lg:p-8">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
 <admin-footer></admin-footer>
