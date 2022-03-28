@@ -2,14 +2,16 @@
   class="bg-slate-900 px-4 py-2 justify-between items-center inset-x-0 z-[1000] text-white"
 >
   <div class="flex justify-between w-full">
-    <mat-icon
-      aria-hidden="false"
-      [ngClass]="!appNavigationService.sideBarOpen ? 'block' : 'hidden'"
-      class="text-white cursor-pointer"
-      aria-label="Notifications"
-      (click)="appNavigationService.toggleSideBarOpen()"
-      >menu</mat-icon
-    >
+    <div class="flex items-center">
+      <mat-icon
+        aria-hidden="false"
+        class="text-white cursor-pointer"
+        aria-label="Notifications"
+        (click)="appNavigationService.toggleSideBarOpen()"
+        >menu</mat-icon
+      >
+      <div *ngIf="!appNavigationService.sideBarOpen" class="text-2xl ml-4">House Me</div >
+    </div>
     <mat-icon
       aria-hidden="false"
       class="text-white block"
